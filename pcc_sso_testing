@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Frontend - Iframe Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 90%;
+            height: 90%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Dynamically set iframe src with parent origin as query param
+        const iframe = document.createElement('iframe');
+        const parentOrigin = encodeURIComponent(window.location.origin);
+        iframe.src = `http://localhost:3000/analysis/5ed49107-ae79-408e-a82e-96f89753dc2a/dashboard?parentOrigin=${parentOrigin}&tab=0`;        
+        document.body.appendChild(iframe);
+    </script>
+</body>
+</html>
+
