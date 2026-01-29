@@ -25,11 +25,12 @@
     </style>
 </head>
 <body>
-    <iframe 
-        src="https://org4.cus.ctnxt.clootrack.com/analysis/a6a44c37-1f8c-4432-8b4e-1e7beb3f0829/dashboard?tab=0"
-        allow="camera; microphone; geolocation; storage-access; fullscreen"
-        allowfullscreen
-        sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-modals allow-downloads"
-    ></iframe>
+    <script>
+        // Dynamically set iframe src with parent origin as query param
+        const parentOrigin = encodeURIComponent(window.location.origin);
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://org4.cus.ctnxt.clootrack.com/analysis/a6a44c37-1f8c-4432-8b4e-1e7beb3f0829/dashboard?tab=0?parentOrigin=${parentOrigin}&tab=0`; 
+        document.body.appendChild(iframe);
+    </script>
 </body>
 </html>
