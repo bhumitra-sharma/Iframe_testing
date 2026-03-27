@@ -27,9 +27,9 @@
 <body>
     <script>
         // Dynamically set iframe src with parent origin as query param
-        const parentOrigin = encodeURIComponent(window.location.origin);
         const iframe = document.createElement('iframe');
-        iframe.src = `https://org4.cus.ctnxt.clootrack.com/analysis/a6a44c37-1f8c-4432-8b4e-1e7beb3f0829/dashboard?tab=0?parentOrigin=${parentOrigin}&tab=0`; 
+        const parentOrigin = encodeURIComponent(window.location.origin);
+        iframe.src = `https://org4.cus.ctnxt.clootrack.com/analysis/a6a44c37-1f8c-4432-8b4e-1e7beb3f0829/dashboard?parentOrigin=${parentOrigin}&tab=0`; 
         document.body.appendChild(iframe);
     </script>
 </body>
